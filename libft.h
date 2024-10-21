@@ -6,16 +6,22 @@
 /*   By: lnierobi <lnierobi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 10:40:50 by lnierobi          #+#    #+#             */
-/*   Updated: 2024/03/30 12:15:03 by lnierobi         ###   ########.fr       */
+/*   Updated: 2024/10/21 11:00:19 by lnierobi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <limits.h>
+# include <stdarg.h>
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 5000
+# endif
 
 typedef struct s_list
 {
@@ -68,5 +74,26 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
-
+// ft_printf
+int					unsigned_decimal(unsigned int n, int base);
+int					ft_printf(const char *format, ...);
+int					hex_low(unsigned long n, int base);
+int					hex_up(long long n, int base);
+int					print_char(int c);
+int					print_digit(int n, int base);
+int					print_int(long long n);
+int					print_pointer(void *ptr);
+int					print_str(char *s);
+// get_next_line
+void				*ft_memset(void *b, int c, size_t len);
+char				*ft_substr(char const *s, unsigned int start, size_t len);
+char				*create_workstring(int fd, char **workstring,
+						int *bytecount, char *buffer);
+char				*extract_line_befor_newline(char *workstring);
+char				*line_delete_newline_keep(char *workstring);
+char				*get_next_line(int fd);
+char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_strdup(const char *s1);
+char				*ft_strchr(const char *s, int c);
+size_t				ft_strlen(const char *s);
 #endif
