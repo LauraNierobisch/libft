@@ -6,7 +6,7 @@
 /*   By: lnierobi <lnierobi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 14:52:55 by lnierobi          #+#    #+#             */
-/*   Updated: 2024/10/21 11:01:47 by lnierobi         ###   ########.fr       */
+/*   Updated: 2024/11/29 16:04:15 by lnierobi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,7 @@ int	hex_low(unsigned long n, int base)
 	char		print;
 
 	count = 0;
-	if (n < 0)
-	{
-		if (write(1, "-", 1) == -1)
-			return (-1);
-		n = -n;
-		count++;
-	}
+
 	print = letters[n % base];
 	n = n / base;
 	if (n > 0)
