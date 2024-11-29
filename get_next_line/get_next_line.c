@@ -6,38 +6,38 @@
 /*   By: lnierobi <lnierobi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 13:01:14 by lnierobi          #+#    #+#             */
-/*   Updated: 2024/10/21 11:01:57 by lnierobi         ###   ########.fr       */
+/*   Updated: 2024/11/29 16:53:44 by lnierobi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 // make a new string out of the old string from starting point to the leng point
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char	*output;
-	size_t	s_len;
-	size_t	i;
+// char	*ft_substr(char const *s, unsigned int start, size_t len)
+// {
+// 	char	*output;
+// 	size_t	s_len;
+// 	size_t	i;
 
-	if (!s)
-		return (0);
-	s_len = ft_strlen(s);
-	if (start >= s_len)
-		return (ft_strdup(""));
-	if (len >= s_len - start)
-		len = s_len - start;
-	output = (char *)malloc(sizeof(char) * (len + 1));
-	if (!output)
-		return (0);
-	i = 0;
-	while (i < len && (s + start)[i] != '\0')
-	{
-		output[i] = (s + start)[i];
-		i++;
-	}
-	output[i] = '\0';
-	return (output);
-}
+// 	if (!s)
+// 		return (0);
+// 	s_len = ft_strlen(s);
+// 	if (start >= s_len)
+// 		return (ft_strdup(""));
+// 	if (len >= s_len - start)
+// 		len = s_len - start;
+// 	output = (char *)malloc(sizeof(char) * (len + 1));
+// 	if (!output)
+// 		return (0);
+// 	i = 0;
+// 	while (i < len && (s + start)[i] != '\0')
+// 	{
+// 		output[i] = (s + start)[i];
+// 		i++;
+// 	}
+// 	output[i] = '\0';
+// 	return (output);
+// }
 
 // memsetset fills the empty strings with 0's.
 // if workstring is empthy it gives only the 0 out
